@@ -11,8 +11,9 @@ app.use(express.static("public"));
 app.get("/", async (req, res) => {
   const clientId = process.env.PAYPAL_CLIENT_ID, merchantId = process.env.PAYPAL_MERCHANT_ID;
   const clientSecret = process.env.PAYPAL_CLIENT_SECRET;
+  const mymerchantId = process.env.PAYPAL_MERCHANT_ID;
   try {
-    if (!clientId || !merchantId ||  !clientSecret){
+    if (!clientId || !mymerchantId ||  !clientSecret){
       throw new Error("Client Id or App Secret or Merchant Id is missing.");
     }
     const clientToken = await paypal.generateClientToken();
