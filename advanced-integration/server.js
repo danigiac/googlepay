@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import * as paypal from "./paypal-api.js";
-require('dotenv').config(); //dani 25 giu
+//require('dotenv').config(); //dani 25 giu
 const {PORT = 8888} = process.env;
 
 const app = express();
